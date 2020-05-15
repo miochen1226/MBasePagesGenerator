@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MyVC" customModule="ProjectMaker" customModuleProvider="target">
+            <connections>
+                <outlet property="dragHandleView" destination="3pM-7c-qoo" id="QSU-dm-JzQ"/>
+                <outlet property="imageView" destination="Ulb-HY-V9F" id="R1E-nl-yaC"/>
+                <outlet property="textView" destination="Hz6-wi-uk8" id="CxP-9r-j4z"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="SxH-x9-qgs"/>
+                <outlet property="viewBG" destination="EAQ-b9-wj2" id="U9W-HE-qkO"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY" customClass="DragHandleView" customModule="ProjectMaker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1280" height="894"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-b9-wj2" userLabel="DragAreaView">
+                    <rect key="frame" x="0.0" y="694" width="1280" height="200"/>
+                    <subviews>
+                        <imageView canDrawConcurrently="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ulb-HY-V9F">
+                            <rect key="frame" x="0.0" y="0.0" width="1280" height="200"/>
+                            <imageCell key="cell" enabled="NO" alignment="left" imageScaling="proportionallyUpOrDown" image="world" id="Pub-W0-umV"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Ulb-HY-V9F" firstAttribute="top" secondItem="EAQ-b9-wj2" secondAttribute="top" id="8mk-yM-4Wg"/>
+                        <constraint firstItem="Ulb-HY-V9F" firstAttribute="leading" secondItem="EAQ-b9-wj2" secondAttribute="leading" id="JS5-bz-GxE"/>
+                        <constraint firstAttribute="trailing" secondItem="Ulb-HY-V9F" secondAttribute="trailing" id="Kor-Ku-6Hs"/>
+                        <constraint firstAttribute="height" constant="200" id="Tjf-Pc-1ML"/>
+                        <constraint firstAttribute="bottom" secondItem="Ulb-HY-V9F" secondAttribute="bottom" id="g58-DZ-f98"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="Sy6-hF-WSo"/>
+                    </connections>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="3pM-7c-qoo">
+                    <rect key="frame" x="0.0" y="694" width="1280" height="200"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u2S-Yx-R1z">
+                            <rect key="frame" x="532" y="84" width="216" height="32"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Drag a Folder here" id="eia-PO-dwE">
+                                <font key="font" metaFont="system" size="27"/>
+                                <color key="textColor" red="0.59209048750000004" green="0.59219515320000005" blue="0.59208387139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="u2S-Yx-R1z" firstAttribute="centerX" secondItem="3pM-7c-qoo" secondAttribute="centerX" id="JJ9-4l-LhV"/>
+                        <constraint firstItem="u2S-Yx-R1z" firstAttribute="centerY" secondItem="3pM-7c-qoo" secondAttribute="centerY" id="fNS-hC-KXo"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="2pQ-mO-mM1">
+                    <rect key="frame" x="0.0" y="0.0" width="1280" height="694"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="saX-rf-faq">
+                            <rect key="frame" x="1116" y="13" width="150" height="32"/>
+                            <buttonCell key="cell" type="push" title="Export to Desktop" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="92u-SV-u2y">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="didExportClickedWithButton:" target="-2" id="3kV-g5-jNL"/>
+                            </connections>
+                        </button>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-wi-uk8">
+                            <rect key="frame" x="18" y="25" width="37" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="TEXT" id="tuq-7Q-Gkn">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="saX-rf-faq" secondAttribute="trailing" constant="20" id="Ket-mh-RLJ"/>
+                        <constraint firstItem="saX-rf-faq" firstAttribute="top" secondItem="Hz6-wi-uk8" secondAttribute="top" id="cfq-fA-OAW"/>
+                        <constraint firstItem="Hz6-wi-uk8" firstAttribute="leading" secondItem="2pQ-mO-mM1" secondAttribute="leading" constant="20" id="lC1-US-ISD"/>
+                        <constraint firstItem="saX-rf-faq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hz6-wi-uk8" secondAttribute="trailing" constant="20" id="lg8-AN-bbe"/>
+                        <constraint firstAttribute="bottom" secondItem="saX-rf-faq" secondAttribute="bottom" constant="20" id="zo6-JL-je1"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EAQ-b9-wj2" secondAttribute="trailing" id="AiH-9r-Fai"/>
+                <constraint firstItem="3pM-7c-qoo" firstAttribute="trailing" secondItem="EAQ-b9-wj2" secondAttribute="trailing" id="FmU-Ot-UPq"/>
+                <constraint firstItem="3pM-7c-qoo" firstAttribute="top" secondItem="EAQ-b9-wj2" secondAttribute="top" id="UNm-4j-eQz"/>
+                <constraint firstAttribute="bottom" secondItem="2pQ-mO-mM1" secondAttribute="bottom" id="Zs2-1w-SwR"/>
+                <constraint firstItem="3pM-7c-qoo" firstAttribute="leading" secondItem="EAQ-b9-wj2" secondAttribute="leading" id="dqU-yW-Mxd"/>
+                <constraint firstItem="2pQ-mO-mM1" firstAttribute="trailing" secondItem="EAQ-b9-wj2" secondAttribute="trailing" id="g4N-nj-Kig"/>
+                <constraint firstItem="3pM-7c-qoo" firstAttribute="bottom" secondItem="EAQ-b9-wj2" secondAttribute="bottom" id="lZi-oP-1lV"/>
+                <constraint firstItem="EAQ-b9-wj2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="n63-ph-IPd"/>
+                <constraint firstItem="2pQ-mO-mM1" firstAttribute="top" secondItem="EAQ-b9-wj2" secondAttribute="bottom" id="wey-SS-pYT"/>
+                <constraint firstItem="EAQ-b9-wj2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="yJ2-rn-3O1"/>
+                <constraint firstItem="2pQ-mO-mM1" firstAttribute="leading" secondItem="EAQ-b9-wj2" secondAttribute="leading" id="ysH-te-0u8"/>
+            </constraints>
+            <connections>
+                <outlet property="delegate" destination="-2" id="fdM-3B-wg6"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="435"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="world" width="1280" height="720"/>
+    </resources>
+</document>

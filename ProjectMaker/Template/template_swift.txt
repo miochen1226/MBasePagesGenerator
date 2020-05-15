@@ -1,0 +1,48 @@
+//
+//  {$CLASS_NAME}.swift
+//
+//
+//  Created by mio on 2020/4/9.
+//  Copyright © 2020 miochen. All rights reserved.
+//
+
+import UIKit
+import MBaseSDK
+
+class {$CLASS_NAME}: BasePageVC {
+
+    override class func getPageIdentity() -> String {
+        return "{$PAGE_ID}"
+    }
+    
+    override class func getPageNibName() -> String {
+        return "{$CLASS_NAME}"
+    }
+    
+    override class func getAuthor() -> MBAuthor {
+        return AuthorDef.Mio
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func doInit(dataInit: dataMapObj) {
+        self.dataMap = dataInit
+        self.viewDidLayoutSubviews()
+    }
+}
+
+extension {$CLASS_NAME}:BasePageProtocal
+{
+    @objc func getPageDataTemplates() -> [PageDataTemplate] {
+        let pageDataTemplate1 = PageDataTemplate()
+        pageDataTemplate1.name = "template_1"
+        pageDataTemplate1.data = ["labelTitle":"{$CLASS_NAME}"]
+        
+        let pageDataTemplate2 = PageDataTemplate()
+        pageDataTemplate2.name = "template_2"
+        pageDataTemplate2.data = [:]
+        return [pageDataTemplate1,pageDataTemplate2]
+    }
+}
